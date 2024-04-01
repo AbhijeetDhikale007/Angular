@@ -1,0 +1,274 @@
+Angular Based On Java Script
+
+React = JavaScript library.
+Angular = TypeScript-based JavaScript framework.
+
+React uses one-way data binding and virtual DOM trees.
+Angular uses two-way data binding and real DOM. Moreover, React is faster than Angular as it has a smaller bundle size.
+
+Angular = 14 September 2016
+Angular JS = 20 October 2010
+
+Every unit is testable.
+
+Developed by Google.
+
+Fast, efficient, flexible, extensible web apps.
+
+Latest Version = 17.2 - Week of 2024-02-12
+━━━━━━༺༻━━━━━━
+Required:
+    - Angular  CLI (Command Line Interface)
+    - Installation: npm install -g @angular/cli
+    - Create a new project with the following command:
+        ng new my-new-project
+	ng new my-new-project --no-standalone
+    - Creat a component:
+        ng g c <Component Name>
+    - Create a service:
+        ng g s <Service Name>
+        To run your application in development mode use the following command:
+            cd my-new-project
+            ng serve
+            Open a browser to localhost:4200
+━━━━━━༺༻━━━━━━
+TypeScript:
+    TypeScript made by Microsoft
+    TypeScript is superscript of JavaScript.
+    npm install -g typescript --save-dev
+    tsconfig.json file contains all configuration for TypeScript compiler.
+    
+TypeScript changes  from JavaScript:
+    - Interfaces vs Classes
+    - Null safety
+    - Enums
+    - Generics
+    - Decorators
+    - Async/Await
+    - Modules are optional
+    - More strict type checking
+
+Components:
+    A component represents a self-contained piece of UI.
+    They are reusable and can be composed together to create complex UIs.
+
+Modules:
+    A module groups related code into a single package.
+    The purpose of modules is to organize code so that it’s easier to manage and test.
+    In an NgModule you can declare components, directives, and pipes.
+    You can also export other modules or specific items from a module.
+
+Services:
+    Services are singletons—their instances are shared across the entire application.
+
+    Components:
+        A component represents a self-contained piece of functionality within an application. It can contain services, directives, and views.
+
+━━━━━━༺༻━━━━━━
+Directives:
+    A directive allows you to attach behavior to an element or component.
+    Directive classes are annotated with the @Directive decorator.
+    The selector property specifies which elements the directive should be applied to.
+
+Template Literals (Template Strings):
+    Template literals allow you to include expressions inside a string using backticks (`).
+    Expressions can include anything from variables to function calls.
+    Expression values will be automatically inserted into the template where the expression appears.
+
+    Component Interaction:
+        1. Parent and Child Communicate through Event Emitters.
+        2. Parent passes data to child via input properties.
+        3. Child sends data to parent via output properties.
+
+        Modules:
+            1. CommonModule: Provides basic directives like NgIf and NgFor.
+            2. FormsModule: Provides directives for form control and validation.
+            3. ReactiveFormsModule: Builds upon FormsModule and provides reactive forms support that works with Angular’s Dependency In
+                           Includes ReactiveFormsModule for reactive forms approach.
+            4. HttpClientModule: Allows making HTTP requests from the client to a server.
+━━━━━━༺༻━━━━━━
+
+Inheritance:
+    Angular components inherit properties, methods, and styles from their base class.
+
+Lifecycle Hooks:
+    Lifecycle hooks provide specific points of interaction during the lifecycle of a component.
+    They are methods that Angular invokes at particular times in the life cycle of a component.
+    There are eight types of lifecycle hooks available in Angular:
+━━━━━━༺༻━━━━━━
+
+Access Modifier:
+    Public: Can be accessed anywhere.
+    Private: Only accessible within the same class
+    Protected: Available only within the same class and its subclasses.
+
+Output vs OnChanges():
+    1. Output is used when we want to notify other components about changes made by our component
+    
+    2. ngOnChanges(): Called right after inputs have been checked. It is called before ngOnInit().
+            If any input value changes, then this method will be invoked.
+    ngOnInit(): Called once, just after the first time onInit is run.
+            This is ideal place to make asynchronous calls.
+    ngDoCheck(): Called whenever something has changed.
+            Ideal place to implement change detection logic
+
+━━━━━━༺༻━━━━━━
+Angular Pipes:
+    - Transform the data as per requirement to display it properly.
+    - Used with interpolation {{}} or using the pipe operator |
+
+    Types of pipes:
+        1. Filtering pipes (like 'filter', 'find')
+        2. Formatting pipes (like 'date', 'currency')
+        3. Transformation pipes ('json', 'lowercase', etc.)
+        4. Grouping/Aggregating pipes
+        5. Combination pipes
+
+    Syntax: @Pipe({ name : 'pipeName' })
+             export class PipeClassName implements PipeTransform { ... }
+
+    Example usage:
+        {{ userList | orderBy }} // Order the list based on property "name"
+        {{ totalItems | numberFormat }} // Format the number to show two decimal places
+    
+    - Built-in pipes:
+        1. DatePipe: Converts date objects or numbers to string based on locale .
+            Examples:  
+               {{ birthday | date }} // Displays date in local format
+               {{ age | number }}  // Displays age in numeric format
+         
+        2. JsonPipe: Converts object into JSON string.
+            Example:
+                <p>{{ user | json }}</p>
+
+        3. LowerCasePipe: Converts string characters to lowercase.
+            Example:
+                <h1>Welcome {{ name | lowercase }}!</h1>
+
+        4. SlicePipe: Extract part of array/string.
+            Example:
+                       <li *ngFor="let item of items | slice : 1 :  3">Item</li>
+━━━━━━༺༻━━━━━━
+
+Class:
+    A class represents a blueprint for creating an object (a specific data structure).
+    In Angular, classes are used to create directives, components, services, etc.
+
+Constructor:
+    The constructor property of a JavaScript class allows you to initialize the properties of an object created from
+    The constructor property of a JavaScript class allows you to initialize the properties of an object created from
+    The constructor property of a JavaScript class allows you to initialize the properties of an object.
+    Whenever a new instance of a class is created using the "new" keyword, the constructor code block executes.
+    Whenever a new instance of a class is created using the "new" keyword, the constructor code block executes.
+    When a new instance of a class is created using the "new" keyword, the constructor code block executes.
+━━━━━━༺༻━━━━━━
+
+Metadata:
+    Metadata is information that describes how a class or directive should be processed by the Angular framework
+    Metadata is a way to store information about a class that can be read by other parts of the system.
+    It's stored as metadata associated with the class and its members.
+    You attach metadata to your component like this:
+        @Component({ ... })
+        export class MyComponent { }
+
+    There are two types of metadata available in Angular:
+        1. Decorators: They are functions that add additional functionality to a class or a class member.
+           Decorator function takes one argument – an object literal called metadata.
+           For example:
+             @Component({...})  
+             class MyComponent {}
+             
+        2. Annotations: They provide metadata about how to process a decorated symbol.
+━━━━━━༺༻━━━━━━
+
+Angular Architecture:
+    1. Components: These represent individual pieces of UI such as buttons, menus, or form inputs.
+       - Template Syntax: Two-way binding, event bindings, directive bindings, interpolation.
+       - Component Class API: Inputs, Outputs, ViewChild, ContentChild, HostBinding, HostListener.
+    2. Directives: Used to manipulate host elements and/or apply styles to them.
+       - Selectors: CSS selectors, structural directives (like NgIf), attribute directives ([class.is-active]).
+       - Selectors: Match HTML elements based on their tag names, attributes, classes, or even CSS selectors.
+    3. Services / Providers: Singleton instances shared across the entire application.
+       - Provide() method: Defines a service provider.
+       - Service Classes: Contain business logic related to the app’s domain.
+    4. Pipes: Transform input values into output values.
+       - Pipe transform methods take source value(s) as arguments and return transformed result.
+    5. Modules: Organize related code into reusable packages.
+       - Imports: Import modules from another module.
+       - Exports: Make a module’s exports available for import in other modules.
+       - Providers: Define providers at the module level.
+    6. Routing: Enable navigation between views within the application.
+       - RouterModule.forRoot(): Configures routes for the whole application.
+       - RouterOutlet: A placeholder that marks where the router should insert the view when navigating to a link.
+       - RouterOutlet: A placeholder that directs router to project content into a specific location.
+       7. Animations: Allow developers to create visually appealing effects when components change state.
+          - NgIf: Conditionally includes a template based on whether a condition evaluates to true or false.
+            Usage: <div *ngIf="condition"> </div>
+          - NgFor: Repeats a template for each item in a list.
+            Usage: <li *ngFor="let item of items; let i = index"> </li>
+          - NgSwitch: Evaluates an expression and repeats a different block of code for each possible value.
+            Usage:  
+                <div [@myAnimation]="expression">Content</div>  
+                  <transition [expr]="valueA" exprB></transition>
+          - NgClass / NgStyle: Dynamically applying CSS classes and style based on expressions.
+            Usage: ngClass/NgStyle="{'class': expression}"
+          - Bindings (Host Binding): Apply styling directly to an element.
+              
+Angular CLI Commands:
+    ng new my-app      : Creates a new Angular application.
+    ng serve            : Starts the development server.
+    ng build            : Builds the application.
+    ng test             : Runs unit tests.
+    ng e2e              : Runs end-to-end tests.
+    ng lint             : Runs tslint against your project.
+    ng generate         : Generates and maintains files that are required by Angular.
+    ng get              : Retrieves the latest version number of @angular/cli.
+    ng update           : Updates @angular/cli and @angular packages.
+    ng add              : Installs a package and adds it to dependencies.
+    ng version          : Shows installed versions of Angular CLI and local npm packages.
+    Issues with Angular: https://github.com/angular/angular/issues
+
+Note: The above commands should be run inside the root directory of your angular project. If you don't have one, use "ng    StackBlitz Template: https://stackbl
+Note: The above commands should be run inside the root directory of your angular project.
+
+━━━━━━༺༻━━━━━━
+
+Angular Directives:
+    - Attribute directive: Changes HTML structure, styles, or behavior of elements.
+    Example: <element directive></element>
+    Syntax: selector: [attribute] or .class or element
+
+    1. Component Directive:
+        - Selector: Defines how to select elements from the DOM which will become our component instances.
+        - Template: Contains HTML templates, CSS styles, and TypeScript logic.
+        - Metadata: Provides information about the directive such as its selector, inputs, outputs, etc.
+
+    2. Structural Directives:
+        - Modify the DOM layout by adding, removing, or manipulating elements at runtime.
+        - Lifecycle Hooks: ngOnChanges(), ngOnInit(), ngAfterViewInit()
+        - Example: <element *directive></element>
+    
+    3. Attribute Directives:
+        - Change the appearance or behavior of existing elements in the DOM without creating new ones.
+        - Lifecycle Hooks: ngOnChanges(), ngOnInit(), ngDoCheck(), ngAfterViewChecked()
+
+    4. Class Directives:
+        - Implement custom functionality using JavaScript code instead of HTML templates and CSS.
+        - Lifecycle Hooks: none
+
+    - Structural directive: Modifies the DOM by adding, removing, or manipulating elements.
+    Syntax: selector: ng-container | structural
+
+    Types of directives:
+        - Component: Displays data and responds to user actions.
+        - Service: Provides shared functionality across components.
+        - Pipe: Transforms data into a desired format.
+        - Data binding: Connects component properties to the UI.
+
+    Lifecycle hooks:
+        - OnChanges(): Called when input values change.
+        - OnInit(): Initialize the directive/component after Angular first displays the data-bound property values.
+        - OnInit(): Initialize the directive/component after Angular first displays the data-bound property values and sets up the directive/component.
+        - OnInit(): Initialized after constructor.
+        - DoCheck(): Called for each change detection cycle.
+        - AfterContentInit(): Called after content initialized.
