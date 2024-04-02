@@ -1,10 +1,29 @@
-<form>
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+<h1 class="ml-5">Enter Your Details</h1>
+<form [formGroup]="registrationForm">
+    <div class="mb-3" form-group>
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <input [class.is-invalid]="registrationForm.get('name')?.invalid && registrationForm.get('name')?.touched"
+            [class.is-valid]="registrationForm.get('name')?.valid &&
+        registrationForm.get('name')?.untouched" type="email" class="form-control" id="exampleInputEmail1"
+            aria-describedby="emailHelp">
         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
     </div>
-    <div class="mb-3">
+    <div class="mb-3" form-group>
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input [class.is-invalid]="registrationForm.get('email')?.invalid &&
+        registrationForm.get('email')?.touched" [class.is-valid]="registrationForm.get('email')?.valid &&
+        registrationForm.get('email')?.untouched" type="email" class="form-control" id="exampleInputEmail1"
+            aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    </div>
+    <div form-group>
+        <label>Message</label>
+        <input [class.is-invalid]="registrationForm.get('message')?.invalid && registrationForm.get('message')?.touched" [class.is-valid]="registrationForm.get('message')?.valid && 
+        registrationForm.get('message')?.untouched" class="form-control" type="text" formControlName="message" 
+        id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3" form-group>
         <label for="exampleInputPassword1" class="form-label">Password</label>
         <input type="password" class="form-control" id="exampleInputPassword1">
     </div>
