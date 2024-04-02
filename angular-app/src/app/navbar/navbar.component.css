@@ -8,7 +8,13 @@
     font-family: Roboto Condensed;
 }
 
-/* Header */
+/* body {
+        background: url(background.jpg) no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 80vh;  
+} */
+
 header {
     top: 0;
     width: 100vw;
@@ -19,7 +25,6 @@ header {
     align-items: center;
 }
 
-/* Header Name - Brand Name */
 .HeaderH1 {
     color: white;
     font-size: 6vh;
@@ -27,12 +32,10 @@ header {
     text-shadow: 3px 0px 2px black;
 }
 
-/* Navbar */
 nav {
     word-spacing: 3vw;
 }
 
-/* Navbar Anchor Tag Text */
 nav a {
     font-size: 3.2vh;
     text-decoration: none;
@@ -40,13 +43,11 @@ nav a {
     margin-right: 2vw;
 }
 
-/* Anchor Hover In Nav Bar */
 nav a:hover {
     text-shadow: 0px 0px 15px white;
     transition: 0.3s;
 }
 
-/* Login Button In Header */
 .HeaderButton {
     height: 6vh;
     width: 8vw;
@@ -57,7 +58,6 @@ nav a:hover {
     font-size: 2.7vh;
 }
 
-/* Header Login Button Hover */
 .HeaderButton:hover {
     background: #ffffff;
     color: black;
